@@ -10,3 +10,11 @@ def UpdateConfig(total_node_num, file_distribution, rack_config):
         file.write('\n')
         file.write(rack_config)
 
+def ParseData(result):
+    data = []
+    for line in result.splitlines():
+        words = line.split()
+        data.append((words[0], words[1], words[2]))
+    return data
+            
+

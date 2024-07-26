@@ -3,6 +3,35 @@ from tkinter import ttk
 import config
 import exec
 
+def DisplayTable(result):
+    s = ttk.Style()
+    s.configure('Treeview', rowheight=60)
+    tree = ttk.Treeview(output_text, height=10)  
+    tree.pack(expand=True, fill='both')
+
+    columns = ['TYPE', 'AVG', 'MAX']
+    tree["columns"] = columns
+
+    for col in columns:
+        tree.column(col, width=200, anchor='center')
+    
+    tree.heading('TYPE', text='TYPE')
+    tree.heading('AVG', text='AVG')
+    tree.heading('MAX', text='MAX')
+
+    # data = [
+    #     ('张三', 28, '工程师'),
+    #     ('李四', 35, '设计师'),
+    #     ('王五', 40, '项目经理')
+    # ]
+    data = config.ParseData(result)
+    print(data)
+
+    # 插入数据到表格
+    for d in data:
+        tree.insert('', 'end', values=d)
+
+
 def TeraSort():
     try:
         total_node_num = entry_total_node_num.get()
@@ -11,7 +40,8 @@ def TeraSort():
         output_text.delete("1.0", tk.END)  
         config.UpdateConfig(total_node_num, file_distribution, rack_config)
         result = exec.Exec("TeraSort")
-        output_text.insert(tk.END, f"result: {result}\n")
+        output_text.insert(tk.END, f"{result}\n")
+        DisplayTable(result)
     except ValueError:
         output_text.delete("1.0", tk.END) 
         output_text.insert(tk.END, "Please enter valid numbers\n")
@@ -25,7 +55,8 @@ def CodedTeraSort():
         output_text.delete("1.0", tk.END) 
         config.UpdateConfig(total_node_num, file_distribution, rack_config)
         result = exec.Exec("CodedTeraSort")
-        output_text.insert(tk.END, f"result: {result}\n")
+        output_text.insert(tk.END, f"{result}\n")
+        DisplayTable(result)
     except ValueError:
         output_text.delete("1.0", tk.END) 
         output_text.insert(tk.END, "Please enter valid numbers\n")
