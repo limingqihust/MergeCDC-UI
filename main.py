@@ -19,13 +19,7 @@ def DisplayTable(result):
     tree.heading('AVG', text='AVG')
     tree.heading('MAX', text='MAX')
 
-    # data = [
-    #     ('张三', 28, '工程师'),
-    #     ('李四', 35, '设计师'),
-    #     ('王五', 40, '项目经理')
-    # ]
     data = config.ParseData(result)
-    print(data)
 
     # 插入数据到表格
     for d in data:
