@@ -55,7 +55,7 @@ def CodedTeraSort():
         output_text.delete("1.0", tk.END) 
         output_text.insert(tk.END, "Please enter valid numbers\n")
 
-def OpenFileDistributionSubWindow():
+def OpenSubWindow(entry):
     # 创建一个新的顶级窗口（子窗口）
     input_window = tk.Toplevel(root)
     input_window.title("Input Subwindow")
@@ -72,38 +72,14 @@ def OpenFileDistributionSubWindow():
         # 获取子窗口中的输入内容
         input_text = sub_text.get("1.0", tk.END).strip()
         # 将输入内容设置到主窗口的输入框中
-        text_file_distribution.delete("1.0", tk.END)
-        text_file_distribution.insert("1.0", input_text)
+        entry.delete("1.0", tk.END)
+        entry.insert("1.0", input_text)
         # 关闭子窗口
         input_window.destroy()
     
     confirm_button = ttk.Button(input_window, text="Confirm", command=confirm_input)
     confirm_button.pack(padx=10, pady=10)
 
-def OpenRackConfigSubWindow():
-    # 创建一个新的顶级窗口（子窗口）
-    input_window = tk.Toplevel(root)
-    input_window.title("Input Subwindow")
-    
-    # 子窗口中的标签和多行文本框
-    sub_label = ttk.Label(input_window, text="Enter your input:")
-    sub_label.pack(padx=10, pady=10)
-    
-    sub_text = tk.Text(input_window, width=40, height=10)
-    sub_text.pack(padx=10, pady=10)
-    
-    # 子窗口中的确认按钮
-    def confirm_input():
-        # 获取子窗口中的输入内容
-        input_text = sub_text.get("1.0", tk.END).strip()
-        # 将输入内容设置到主窗口的输入框中
-        text_rack_config.delete("1.0", tk.END)
-        text_rack_config.insert("1.0", input_text)
-        # 关闭子窗口
-        input_window.destroy()
-    
-    confirm_button = ttk.Button(input_window, text="Confirm", command=confirm_input)
-    confirm_button.pack(padx=10, pady=10)
 
 root = tk.Tk()
 root.title("MergeCDC")
@@ -121,7 +97,7 @@ label_file_distribution.grid(column=0, row=3, padx=10, pady=5)
 
 text_file_distribution = tk.Text(root, width = 30, height = 2)
 text_file_distribution.grid(column=1, row=3, padx=10, pady=5)
-text_file_distribution.bind("<Button-1>", lambda event: OpenFileDistributionSubWindow())
+text_file_distribution.bind("<Button-1>", lambda event: OpenSubWindow(text_file_distribution))
 
 # input rack config
 label_rack_config = ttk.Label(root, text="rack config:")
@@ -129,7 +105,7 @@ label_rack_config.grid(column=0, row=4, padx=10, pady=5)
 
 text_rack_config = tk.Text(root, width = 30, height = 2)
 text_rack_config.grid(column=1, row=4, padx=10, pady=5)
-text_rack_config.bind("<Button-1>", lambda event: OpenRackConfigSubWindow())
+text_rack_config.bind("<Button-1>", lambda event: OpenSubWindow(text_rack_config))
 
 
 # exec terasort
