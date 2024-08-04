@@ -10,10 +10,26 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = multi_tab.Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.print_info.clicked.connect(self.PrintInfo)
+        self.ui.terasort.clicked.connect(self.TeraSort)
+        self.ui.coded_terasort.clicked.connect(self.CodedTeraSort)
+        self.ui.tab_0_button.clicked.connect(self.Tab0PushButton)
+        
 
-    def PrintInfo(self):
-        self.ui.output.setText("hello world")
+    def Tab0PushButton(self):
+        self.ui.tab_0_output.clear()
+        msg = self.ui.tab_0_input.toPlainText()
+        self.ui.tab_0_output.setText(msg)
+
+
+    def TeraSort(self):
+        self.ui.output.clear()
+        msg = self.ui.input_file_distribution.toPlainText() + self.ui.input_node_distribution.toPlainText()
+        self.ui.output.setText(msg)
+
+    def CodedTeraSort(self):
+        self.ui.output.clear()
+        msg = self.ui.input_file_distribution.toPlainText() + self.ui.input_node_distribution.toPlainText()
+        self.ui.output.setText(msg)
 
 
 if __name__ == '__main__':

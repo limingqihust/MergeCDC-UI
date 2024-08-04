@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>0</y>
+      <y>20</y>
       <width>771</width>
       <height>531</height>
      </rect>
@@ -26,9 +26,72 @@
     <property name="currentIndex">
      <number>0</number>
     </property>
-    <widget class="QWidget" name="tab0">
+    <widget class="QWidget" name="tab_0">
      <attribute name="title">
       <string>标签0</string>
+     </attribute>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>771</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(252, 175, 62);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QTextEdit" name="tab_0_input">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>30</y>
+         <width>131</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(238, 238, 236);</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="tab_0_output">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>190</y>
+         <width>131</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(238, 238, 236);</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="tab_0_button">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>110</y>
+         <width>89</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_1">
+     <attribute name="title">
+      <string>标签1</string>
      </attribute>
      <widget class="QFrame" name="frame">
       <property name="geometry">
@@ -100,12 +163,12 @@
         <string notr="true">background-color: rgb(238, 238, 236);</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="print_info">
+      <widget class="QPushButton" name="terasort">
        <property name="geometry">
         <rect>
-         <x>120</x>
-         <y>100</y>
-         <width>89</width>
+         <x>30</x>
+         <y>120</y>
+         <width>121</width>
          <height>25</height>
         </rect>
        </property>
@@ -113,49 +176,41 @@
         <string notr="true">background-color: rgb(46, 52, 54);</string>
        </property>
        <property name="text">
-        <string>PrintInfo</string>
+        <string>经典以太网传输</string>
        </property>
       </widget>
-      <widget class="QTextBrowser" name="output">
+      <widget class="QTextEdit" name="output">
        <property name="geometry">
         <rect>
-         <x>120</x>
-         <y>200</y>
-         <width>256</width>
-         <height>192</height>
+         <x>30</x>
+         <y>190</y>
+         <width>291</width>
+         <height>171</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(238, 238, 236);</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="coded_terasort">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>120</y>
+         <width>121</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(46, 52, 54);</string>
+       </property>
+       <property name="text">
+        <string>网络编码传输</string>
+       </property>
+      </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab1">
-     <attribute name="title">
-      <string>标签1</string>
-     </attribute>
-     <widget class="QFrame" name="frame_2">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>771</width>
-        <height>501</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(252, 175, 62);</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab2">
+    <widget class="QWidget" name="tab_2">
      <attribute name="title">
       <string>标签2</string>
      </attribute>
