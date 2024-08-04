@@ -103,8 +103,8 @@
       <widget class="QPushButton" name="print_info">
        <property name="geometry">
         <rect>
-         <x>110</x>
-         <y>130</y>
+         <x>120</x>
+         <y>100</y>
          <width>89</width>
          <height>25</height>
         </rect>
@@ -114,6 +114,19 @@
        </property>
        <property name="text">
         <string>PrintInfo</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="output">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>200</y>
+         <width>256</width>
+         <height>192</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(238, 238, 236);</string>
        </property>
       </widget>
      </widget>

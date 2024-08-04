@@ -4,15 +4,16 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-def PrintInfo():
-    print("hello world")
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = multi_tab.Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.print_info.clicked.connect(PrintInfo)
+        self.ui.print_info.clicked.connect(self.PrintInfo)
+
+    def PrintInfo(self):
+        self.ui.output.setText("hello world")
 
 
 if __name__ == '__main__':
